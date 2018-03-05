@@ -1,0 +1,53 @@
+digraph G {
+	rankdir=TB;
+	
+	fontname="Microsoft YaHei";
+	fontsize=12;
+	
+	label="ngx_pool_t分配地址的流程图";
+
+	node[shape=Mrecord, fontname="Microsoft YaHei", fontsize=12, color="skyblue"];
+	edge[fontname="Microsoft YaHei", fontsize=12, color=darkgreen];
+
+	start[label="", shape=circle, width=0.3, fixedsize=true, style=filled, color=black];
+	end[label="", shape=circle, width=0.3, fixedsize=true, style=filled, color=black];
+	
+	s1[label="1) 将分配大小size和ngx_pool_t的max成员比较"];
+	s2[label="2) 从current成员指向的ngx_pool_t开始遍历pool链表"];
+	s3[label="3) 从当前ngx_pool_data_t的last指针找到对齐地址"];
+	s4[label="4) 比较较新的地址和end之前的地址空间大小是否可容纳size"];
+	s5[label="5) 设last为对齐地址加上size，返回对齐地址"];
+	s6[label="6) 分配新的ngx_pool_t,大小与第1个pool一致"];
+	s7[label="7) 对齐空闲内存首地址,重置last指针"];
+	s8[label="8) 检查各pool的failed次数,重置current指针"];
+	s9[label="9) 返回新pool分配出的对齐内存地址"];
+	s10[label="10) 分配一块size大小的内存"];
+	s11[label="11) 遍历pool的large链表,找出alloc=NULL的指针"];
+	s12[label="12) 将刚分配内存赋给alloc,并返回地址"];
+	s13[label="13) 刚分配ngx_pool_large_t结构赋值后挂载large链表上,返回地址"];
+
+	d1[label="", shape=diamond, width=0.4, height=0.3, fixedsize=true, penwidth=1.5];
+	d2[label="", shape=diamond, width=0.4, height=0.3, fixedsize=true, penwidth=1.5];
+	d3[label="", shape=diamond, width=0.4, height=0.3, fixedsize=true, penwidth=1.5];
+
+	start->s1;
+	s1->d1;
+	d1->s2[label="[size<=max]"];
+	d1->s10[label="[size>max]"];
+	s2->s3;
+	s3->s4;
+	s4->d2;
+	d2->s5[label="[找到一个pool可以分出size地址]"];
+	d2->s6[label="[链表中的所有pool都无法分出size内存]"];
+	s6->s7;
+	s7->s8;
+	s8->s9;
+	s9->end;
+	s5->end;
+	s10->s11;
+	s11->d3;
+	d3->s12[label="[找到alloc值为NULL的成员]"];
+	d3->s13[label="[未找到或遍历个数达到上限]"];
+	s12->end;
+	s13->end;
+}	

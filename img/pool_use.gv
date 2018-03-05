@@ -1,0 +1,27 @@
+digraph G {
+	fontname="Microsoft YaHei";
+	label="ngx_pool_t资源池示意图";
+	edge[fontname="Microsoft YaHei", style="solid"];
+	//指定绘画的方向(LR从左到右绘制)
+	rankdir=LR;
+
+	//定义竖直节点
+	node[fontname="Microsoft YaHei", fontsize = 10, color="skyblue", shape="record"];
+	a [ label="<f1> ngx_pool_t | <f2> d | <f3> max | <f4> current | <f5> chain | <f6> large | <f7> cleanup | <f8> log | <f9> 已分配出的小块内存 | <f10> 未分配的小块内存数据块"]
+	b [ label="<f1> ngx_pool_data_t | <f2> last | <f3> end | <f4> next | <f5> failed" ]
+	c [ label="<f1> ngx_pool_t | <f2> | <f3> ngx_pool_data_t | <f4> last | <f5> end | <f6> next | <f7> failed" ]
+	d [ label="<f1> ngx_pool_t | <f2> | <f3> ngx_pool_data_t | <f4> last | <f5> end | <f6> next | <f7> failed" ]
+	e [ label="<f1> ngx_pool_large_t | <f2> next | <f3> alloc" ]
+	f [ label="<f1> ngx_pool_large_t | <f2> next | <f3> alloc=NULL" ]
+	g [ label="<f1> ngx_pool_large_t | <f2> next | <f3> alloc" ]
+	h [ label="<f1> ngx_pool_cleanup_t | <f2> handler | <f3> data | <f4> next" ]
+	i [ label="<f1> ngx_pool_cleanup_t | <f2> handler | <f3> data | <f4> next" ]
+	a:f2->b:f1;
+	b:f4->c:f1;
+	c:f6->d:f1;
+	a:f6->e:f1;
+	e:f2->f:f1;
+	f:f2->g:f1;
+	a:f7->h:f1;
+	h:f4->i:f1;
+}
