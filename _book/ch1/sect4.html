@@ -794,6 +794,260 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="14-&#x7F16;&#x8BD1;">1.4 &#x7F16;&#x8BD1;</h1>
+<h2 id="&#x7F16;&#x8BD1;&#x548C;&#x5B89;&#x88C5;&#x547D;&#x4EE4;">&#x7F16;&#x8BD1;&#x548C;&#x5B89;&#x88C5;&#x547D;&#x4EE4;</h2>
+<pre><code class="lang-shell">$./configure
+$make
+$make install
+</code></pre>
+<h2 id="configure&#x6D41;&#x7A0B;">configure&#x6D41;&#x7A0B;</h2>
+<pre><code class="lang-shell">hgh@hgh-Macmini:~/project/nginx-stable-1.14$ ./auto/configure --help
+
+  --help                             print this message
+
+  --prefix=PATH                      set installation prefix
+  --sbin-path=PATH                   set nginx binary pathname
+  --modules-path=PATH                set modules path
+  --conf-path=PATH                   set nginx.conf pathname
+  --error-log-path=PATH              set error log pathname
+  --pid-path=PATH                    set nginx.pid pathname
+  --lock-path=PATH                   set nginx.lock pathname
+
+  --user=USER                        set non-privileged user for
+                                     worker processes
+  --group=GROUP                      set non-privileged group for
+                                     worker processes
+
+  --build=NAME                       set build name
+  --builddir=DIR                     set build directory
+
+  --with-select_module               enable select module
+  --without-select_module            disable select module
+  --with-poll_module                 enable poll module
+  --without-poll_module              disable poll module
+
+  --with-threads                     enable thread pool support
+
+  --with-file-aio                    enable file AIO support
+
+  --with-http_ssl_module             enable ngx_http_ssl_module
+  --with-http_v2_module              enable ngx_http_v2_module
+  --with-http_realip_module          enable ngx_http_realip_module
+  --with-http_addition_module        enable ngx_http_addition_module
+  --with-http_xslt_module            enable ngx_http_xslt_module
+  --with-http_xslt_module=dynamic    enable dynamic ngx_http_xslt_module
+  --with-http_image_filter_module    enable ngx_http_image_filter_module
+  --with-http_image_filter_module=dynamic
+                                     enable dynamic ngx_http_image_filter_module
+  --with-http_geoip_module           enable ngx_http_geoip_module
+  --with-http_geoip_module=dynamic   enable dynamic ngx_http_geoip_module
+  --with-http_sub_module             enable ngx_http_sub_module
+  --with-http_dav_module             enable ngx_http_dav_module
+  --with-http_flv_module             enable ngx_http_flv_module
+  --with-http_mp4_module             enable ngx_http_mp4_module
+  --with-http_gunzip_module          enable ngx_http_gunzip_module
+  --with-http_gzip_static_module     enable ngx_http_gzip_static_module
+  --with-http_auth_request_module    enable ngx_http_auth_request_module
+  --with-http_random_index_module    enable ngx_http_random_index_module
+  --with-http_secure_link_module     enable ngx_http_secure_link_module
+  --with-http_degradation_module     enable ngx_http_degradation_module
+  --with-http_slice_module           enable ngx_http_slice_module
+  --with-http_stub_status_module     enable ngx_http_stub_status_module
+
+  --without-http_charset_module      disable ngx_http_charset_module
+  --without-http_gzip_module         disable ngx_http_gzip_module
+  --without-http_ssi_module          disable ngx_http_ssi_module
+  --without-http_userid_module       disable ngx_http_userid_module
+  --without-http_access_module       disable ngx_http_access_module
+  --without-http_auth_basic_module   disable ngx_http_auth_basic_module
+  --without-http_mirror_module       disable ngx_http_mirror_module
+  --without-http_autoindex_module    disable ngx_http_autoindex_module
+  --without-http_geo_module          disable ngx_http_geo_module
+  --without-http_map_module          disable ngx_http_map_module
+  --without-http_split_clients_module disable ngx_http_split_clients_module
+  --without-http_referer_module      disable ngx_http_referer_module
+  --without-http_rewrite_module      disable ngx_http_rewrite_module
+  --without-http_proxy_module        disable ngx_http_proxy_module
+  --without-http_fastcgi_module      disable ngx_http_fastcgi_module
+  --without-http_uwsgi_module        disable ngx_http_uwsgi_module
+  --without-http_scgi_module         disable ngx_http_scgi_module
+  --without-http_grpc_module         disable ngx_http_grpc_module
+  --without-http_memcached_module    disable ngx_http_memcached_module
+  --without-http_limit_conn_module   disable ngx_http_limit_conn_module
+  --without-http_limit_req_module    disable ngx_http_limit_req_module
+  --without-http_empty_gif_module    disable ngx_http_empty_gif_module
+  --without-http_browser_module      disable ngx_http_browser_module
+  --without-http_upstream_hash_module
+                                     disable ngx_http_upstream_hash_module
+  --without-http_upstream_ip_hash_module
+                                     disable ngx_http_upstream_ip_hash_module
+  --without-http_upstream_least_conn_module
+                                     disable ngx_http_upstream_least_conn_module
+  --without-http_upstream_keepalive_module
+                                     disable ngx_http_upstream_keepalive_module
+  --without-http_upstream_zone_module
+                                     disable ngx_http_upstream_zone_module
+
+  --with-http_perl_module            enable ngx_http_perl_module
+  --with-http_perl_module=dynamic    enable dynamic ngx_http_perl_module
+  --with-perl_modules_path=PATH      set Perl modules path
+  --with-perl=PATH                   set perl binary pathname
+
+  --http-log-path=PATH               set http access log pathname
+  --http-client-body-temp-path=PATH  set path to store
+                                     http client request body temporary files
+  --http-proxy-temp-path=PATH        set path to store
+                                     http proxy temporary files
+  --http-fastcgi-temp-path=PATH      set path to store
+                                     http fastcgi temporary files
+  --http-uwsgi-temp-path=PATH        set path to store
+                                     http uwsgi temporary files
+  --http-scgi-temp-path=PATH         set path to store
+                                     http scgi temporary files
+
+  --without-http                     disable HTTP server
+  --without-http-cache               disable HTTP cache
+
+  --with-mail                        enable POP3/IMAP4/SMTP proxy module
+  --with-mail=dynamic                enable dynamic POP3/IMAP4/SMTP proxy module
+  --with-mail_ssl_module             enable ngx_mail_ssl_module
+  --without-mail_pop3_module         disable ngx_mail_pop3_module
+  --without-mail_imap_module         disable ngx_mail_imap_module
+  --without-mail_smtp_module         disable ngx_mail_smtp_module
+
+  --with-stream                      enable TCP/UDP proxy module
+  --with-stream=dynamic              enable dynamic TCP/UDP proxy module
+  --with-stream_ssl_module           enable ngx_stream_ssl_module
+  --with-stream_realip_module        enable ngx_stream_realip_module
+  --with-stream_geoip_module         enable ngx_stream_geoip_module
+  --with-stream_geoip_module=dynamic enable dynamic ngx_stream_geoip_module
+  --with-stream_ssl_preread_module   enable ngx_stream_ssl_preread_module
+  --without-stream_limit_conn_module disable ngx_stream_limit_conn_module
+  --without-stream_access_module     disable ngx_stream_access_module
+  --without-stream_geo_module        disable ngx_stream_geo_module
+  --without-stream_map_module        disable ngx_stream_map_module
+  --without-stream_split_clients_module
+                                     disable ngx_stream_split_clients_module
+  --without-stream_return_module     disable ngx_stream_return_module
+  --without-stream_upstream_hash_module
+                                     disable ngx_stream_upstream_hash_module
+  --without-stream_upstream_least_conn_module
+                                     disable ngx_stream_upstream_least_conn_module
+  --without-stream_upstream_zone_module
+                                     disable ngx_stream_upstream_zone_module
+
+  --with-google_perftools_module     enable ngx_google_perftools_module
+  --with-cpp_test_module             enable ngx_cpp_test_module
+
+  --add-module=PATH                  enable external module
+  --add-dynamic-module=PATH          enable dynamic external module
+
+  --with-compat                      dynamic modules compatibility
+
+  --with-cc=PATH                     set C compiler pathname
+  --with-cpp=PATH                    set C preprocessor pathname
+  --with-cc-opt=OPTIONS              set additional C compiler options
+  --with-ld-opt=OPTIONS              set additional linker options
+  --with-cpu-opt=CPU                 build for the specified CPU, valid values:
+                                     pentium, pentiumpro, pentium3, pentium4,
+                                     athlon, opteron, sparc32, sparc64, ppc64
+
+  --without-pcre                     disable PCRE library usage
+  --with-pcre                        force PCRE library usage
+  --with-pcre=DIR                    set path to PCRE library sources
+  --with-pcre-opt=OPTIONS            set additional build options for PCRE
+  --with-pcre-jit                    build PCRE with JIT compilation support
+
+  --with-zlib=DIR                    set path to zlib library sources
+  --with-zlib-opt=OPTIONS            set additional build options for zlib
+  --with-zlib-asm=CPU                use zlib assembler sources optimized
+                                     for the specified CPU, valid values:
+                                     pentium, pentiumpro
+
+  --with-libatomic                   force libatomic_ops library usage
+  --with-libatomic=DIR               set path to libatomic_ops library sources
+
+  --with-openssl=DIR                 set path to OpenSSL library sources
+  --with-openssl-opt=OPTIONS         set additional build options for OpenSSL
+
+  --with-debug                       enable debug logging
+</code></pre>
+<h2 id="&#x76F8;&#x5173;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;">&#x76F8;&#x5173;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;</h2>
+<p><a href="https://zlib.net/" target="_blank">zlib</a></p>
+<p><a href="https://www.pcre.org/" target="_blank">pcre</a></p>
+<p><a href="https://www.openssl.org/source/" target="_blank">openssl</a></p>
+<h2 id="&#x672C;&#x5730;&#x94FE;&#x63A5;&#x7F16;&#x8BD1;">&#x672C;&#x5730;&#x94FE;&#x63A5;&#x7F16;&#x8BD1;</h2>
+<pre><code class="lang-shell">$./auto/configure --with-pcre=../pcre-8.42 --with-zlib=../zlib-1.2.11
+</code></pre>
+<h2 id="&#x542F;&#x52A8;&#x65B9;&#x5F0F;">&#x542F;&#x52A8;&#x65B9;&#x5F0F;</h2>
+<pre><code class="lang-shell"># 1.&#x9ED8;&#x8BA4;&#x542F;&#x52A8;&#x65B9;&#x5F0F;
+$/usr/local/nginx/sbin/nginx
+# 2.-c&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+$/usr/local/nginx/sbin/nginx -c nginx.conf
+# 3.-p&#x6307;&#x5B9A;nginx&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;
+$/usr/local/nginx/sbin/nginx -p /usr/local/nginx
+# 4.&#x6307;&#x5B9A;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x9879;
+$/usr/local/nginx/sbin/nginx -g &quot;pid /var/nginx/test.pid&quot;
+</code></pre>
+<h2 id="&#x68C0;&#x6D4B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x9519;&#x8BEF;">&#x68C0;&#x6D4B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x9519;&#x8BEF;</h2>
+<pre><code class="lang-shell">$/usr/local/nginx/sbin/nginx -p /usr/local/nginx -t
+</code></pre>
+<h2 id="nginx&#x9009;&#x9879;">nginx&#x9009;&#x9879;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x9009;&#x9879;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">&#x67E5;&#x770B;&#x7248;&#x672C;</td>
+</tr>
+<tr>
+<td style="text-align:center">-V</td>
+<td style="text-align:center">&#x67E5;&#x770B;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x53C2;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configure&#x7684;&#x6D41;&#x7A0B;">configure&#x7684;&#x6D41;&#x7A0B;</h2>
+<pre><code class="lang-shell">## auto/configure
+
+# &#x5904;&#x7406;configure&#x547D;&#x4EE4;&#x53C2;&#x6570;
+. auto/options
+# &#x68C0;&#x6D4B;echo&#x7684;\c(&#x4E0D;&#x6362;&#x884C;)&#x548C;-n(&#x957F;&#x5EA6;&#x9650;&#x5236;)&#x7684;&#x80FD;&#x529B;,&#x521B;&#x5EFA;Makefile
+. auto/init
+# &#x5206;&#x6790;Nginx&#x7684;&#x6E90;&#x7801;&#x7ED3;&#x6784;
+. auto/sources
+# &#x83B7;&#x53D6;&#x672C;&#x5730;NGX_PLATFORM
+...
+# &#x68C0;&#x67E5;GCC&#x662F;&#x5426;&#x5B89;&#x88C5;,&#x68C0;&#x67E5;GCC&#x7248;&#x672C;&#x662F;&#x5426;&#x652F;&#x6301;&#x7F16;&#x8BD1;nginx
+. auto/cc/conf
+# &#x5BF9;&#x4E8E;&#x975E;windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x5934;&#x6587;&#x4EF6;
+. auto/headers
+# &#x68C0;&#x6D4B;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x7684;&#x652F;&#x6301;
+. auto/os/conf
+# &#x5B9A;&#x4E49;&#x7C7B;unix&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x901A;&#x7528;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x548C;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x7B49;,&#x5E76;&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x662F;&#x5426;&#x652F;&#x6301;
+. auto/unix
+# &#x7EBF;&#x7A0B;&#x4F7F;&#x7528;
+. auto/threads
+# nginx&#x6A21;&#x5757;&#x5904;&#x7406;
+. auto/modules
+# &#x5904;&#x7406;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x5E93;
+. auto/lib/conf
+# &#x672C;&#x5730;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;
+...
+# &#x521B;&#x5EFA;objs/Makefile&#x6587;&#x4EF6;
+. auto/make
+# &#x4E3A;objs/Makefile&#x52A0;&#x5165;&#x9700;&#x8981;&#x94FE;&#x63A5;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x9759;&#x6001;&#x5E93;,&#x52A8;&#x6001;&#x5E93;&#x6216;&#x76EE;&#x6807;&#x6587;&#x4EF6;
+. auto/lib/make
+# &#x4E3A;objs/Makefile&#x4E2D;&#x52A0;&#x5165;install&#x529F;&#x80FD;
+. auto/install
+# &#x52A0;&#x5165;NGX_SUPPRESS_WARN&#x5B8F;,NGX_SMP&#x5B8F;
+. auto/stubs
+# &#x663E;&#x793A;&#x603B;&#x89C8;&#x7ED3;&#x679C;
+. auto/summary
+</code></pre>
 
                                 
                                 </section>
@@ -837,7 +1091,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.4 编译","level":"1.2.4","depth":2,"next":{"title":"1.5 总结","level":"1.2.5","depth":2,"path":"ch1/sect5.md","ref":"ch1/sect5.md","articles":[]},"previous":{"title":"1.3 Nginx命令","level":"1.2.3","depth":2,"path":"ch1/sect3.md","ref":"ch1/sect3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch1/sect4.md","mtime":"2018-03-03T02:28:21.136Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-04T09:34:28.669Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.4 编译","level":"1.2.4","depth":2,"next":{"title":"1.5 总结","level":"1.2.5","depth":2,"path":"ch1/sect5.md","ref":"ch1/sect5.md","articles":[]},"previous":{"title":"1.3 Nginx命令","level":"1.2.3","depth":2,"path":"ch1/sect3.md","ref":"ch1/sect3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch1/sect4.md","mtime":"2018-12-05T14:26:53.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-24T03:15:02.056Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
